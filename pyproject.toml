@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cliplug"
+version = "0.1.0"
+description = "A CLI plugin system"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+dependencies = [
+    "click>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=0.10.0",
+]
+
+[project.scripts]
+cliplug = "cliplug.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cliplug*"]
