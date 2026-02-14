@@ -1,6 +1,3 @@
-Add a filter option to the list command
-    - filter by keywords
-
 Add config file that allow the user to specify the following
 - commands file path
 - commands file format
