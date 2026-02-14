@@ -1,0 +1,16 @@
+Add a filter option to the list command
+    - filter by keywords
+
+Add config file that allow the user to specify the following
+- commands file path
+- commands file format
+
+Add config command to do the following
+- show the current config
+- edit the config
+
+Add the user of variables with in the commands
+
+Add bulk run commands as if is a script
+
+Allow cliplug to save commands in s3, repo
