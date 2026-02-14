@@ -9,6 +9,6 @@ def add(command, reference):
     data = load_data()
     if reference not in data["commands"]:
         add_command(reference, command)
-        click.secho(f"The following command has been added: {reference}: {command}", fg="green")
+        click.secho(f"The following command has been added: {reference} -> {command}", fg="green")
     else:
         click.secho("Command already exists!", fg="red")
