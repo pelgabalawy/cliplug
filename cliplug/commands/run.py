@@ -1,8 +1,7 @@
 import click
 import subprocess
 
-#TODO: the following is for testing only
-from cliplug.commands.list import COMMAND_REGISTRY
+from cliplug.storage.yaml_store import load_data
 
 
 @click.command()
@@ -13,8 +12,9 @@ from cliplug.commands.list import COMMAND_REGISTRY
     help="Run one of the saved command or a new command"
 )
 def run(command):
-    if command in COMMAND_REGISTRY:
-        cmd_to_run = COMMAND_REGISTRY[command]
+    data = load_data()
+    if command in data["commands"]:
+        cmd_to_run = data["commands"][command]
         result = subprocess.run(
                     cmd_to_run.split(" "),
                     capture_output=True,
@@ -24,4 +24,4 @@ def run(command):
                 )
         click.echo(result.stdout)
     else:
-        click.echo("command not found. If you want to see the available commands please use the cliplug list")
+        click.secho("command not found. If you want to see the available commands please use the cliplug list", fg="red")

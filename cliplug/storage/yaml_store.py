@@ -8,7 +8,6 @@ DEFAULT_DATA = {
 
 def load_data() -> dict:
     path = get_commands_file()
-
     if not path.exists():
         return DEFAULT_DATA.copy()
 
@@ -21,6 +20,7 @@ def load_data() -> dict:
     return data
 
 
+
 def save_data(data: dict) -> None:
     path = get_commands_file()
 
@@ -31,3 +31,16 @@ def save_data(data: dict) -> None:
             sort_keys=False,
             default_flow_style=False
         )
+
+
+def add_command(reference: str, command: str) -> None:
+    data = load_data()
+    data["commands"][reference] = command
+    save_data(data)
+
+
+def delete_command(reference: str) -> None:
+    data = load_data()
+    if reference in data["commands"]:
+        del data["commands"][reference]
+        save_data(data)
