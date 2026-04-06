@@ -1,5 +1,14 @@
 # create command manger class
+    # test
 # create a config manager class
-# create components to handle config and saved command
+    # test
+# create the commands to handle config and saved command
     # pass ctx after adding the config to it as an obj
     # inject the ctx in every command function you will add to the group
+    # test
+# package the tool using pyinstaller to make it a standalone cli tool and build it for each platform
+    # test
+# create a README.md file
+    # test
+# create a gitlab action file and generate releases with versions and tags
+# ensure pipeline is building for all platforms and they all work properly
