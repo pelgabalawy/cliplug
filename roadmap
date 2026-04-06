@@ -1,13 +1,5 @@
-Add config file that allow the user to specify the following
-- commands file path
-- commands file format
-
-Add config command to do the following
-- show the current config
-- edit the config
-
-Add the user of variables with in the commands
-
-Add bulk run commands as if is a script
-
-Allow cliplug to save commands in s3, repo
+# create command manger class
+# create a config manager class
+# create components to handle config and saved command
+    # pass ctx after adding the config to it as an obj
+    # inject the ctx in every command function you will add to the group
